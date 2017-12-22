@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>piston-api</artifactId>
+    <name>Piston API</name>
 
     <properties>
         <buildtag.prefix>git-StickyProtocol-</buildtag.prefix>
