@@ -25,6 +25,7 @@
                 <version>0.2</version>
                 <configuration>
                     <format>${buildtag.prefix}%s${buildtag.suffix}</format>
+                    <descriptionProperty>api.version</descriptionProperty>
                 </configuration>
                 <executions>
                     <execution>
@@ -43,12 +44,12 @@
                     <archive>
                         <manifestEntries>
                             <Specification-Title>Piston</Specification-Title>
-                            <Specification-Version>${describe}</Specification-Version>
+                            <Specification-Version>${api.version}</Specification-Version>
                             <Specification-Vendor>Laxio Team</Specification-Vendor>
                         </manifestEntries>
                         <manifestSections>
                             <manifestSection>
-                                <name>org/laxio/</name>
+                                <name>org.laxio.piston.piston</name>
                                 <manifestEntries>
                                     <Sealed>true</Sealed>
                                 </manifestEntries>
@@ -67,5 +68,11 @@
                 </configuration>
             </plugin>
         </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

@@ -1,0 +1,5 @@
+{
+  "Specification-Title": "${project.name}",
+  "Specification-Version": "${api.version}",
+  "Specification-Vendor": "${project.organisation.name}"
+}
