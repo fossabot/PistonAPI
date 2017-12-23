@@ -14,7 +14,7 @@
     <name>Piston API</name>
 
     <properties>
-        <buildtag.prefix>git-Piston-</buildtag.prefix>
+        <buildtag.prefix>git-PistonAPI-</buildtag.prefix>
     </properties>
 
     <dependencies>
