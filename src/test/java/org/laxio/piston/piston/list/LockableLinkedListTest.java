@@ -5,11 +5,11 @@ import org.laxio.piston.piston.exception.list.ListLockedException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LockedLinkedListTest {
+class LockableLinkedListTest {
 
     @Test
     void setLocked() {
-        LockedLinkedList<TestItem> list = new LockedLinkedList<>();
+        LockableLinkedList<TestItem> list = new LockableLinkedList<>();
         list.add(new TestItem(1));
 
         list.setLocked(true);

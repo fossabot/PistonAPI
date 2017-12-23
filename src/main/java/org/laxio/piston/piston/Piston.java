@@ -1,6 +1,6 @@
 package org.laxio.piston.piston;
 
-import org.laxio.piston.piston.list.LockedLinkedList;
+import org.laxio.piston.piston.list.LockableLinkedList;
 import org.laxio.piston.piston.versioning.PistonModule;
 
 import java.util.List;
@@ -14,7 +14,7 @@ public class Piston {
     }
 
     static {
-        modules = new LockedLinkedList<>();
+        modules = new LockableLinkedList<>();
 
     }
 

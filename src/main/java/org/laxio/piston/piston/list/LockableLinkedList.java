@@ -14,14 +14,14 @@ import java.util.function.Predicate;
  *
  * @param <E>
  */
-public class LockedLinkedList<E extends Object> extends LinkedList<E> {
+public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     private boolean locked = false;
 
     /**
      * Constructs an empty List
      */
-    public LockedLinkedList() {
+    public LockableLinkedList() {
         // empty
     }
 
@@ -29,7 +29,7 @@ public class LockedLinkedList<E extends Object> extends LinkedList<E> {
      * Constructs the LinkedList using an existing collection
      * @param collection The collection to use
      */
-    public LockedLinkedList(Collection<? extends E> collection) {
+    public LockableLinkedList(Collection<? extends E> collection) {
         super(collection);
     }
 
@@ -38,7 +38,7 @@ public class LockedLinkedList<E extends Object> extends LinkedList<E> {
      * @param collection The collection to use
      * @param locked The state of the lock after constructing
      */
-    public LockedLinkedList(Collection<? extends E> collection, boolean locked) {
+    public LockableLinkedList(Collection<? extends E> collection, boolean locked) {
         super(collection);
         this.locked = locked;
     }
