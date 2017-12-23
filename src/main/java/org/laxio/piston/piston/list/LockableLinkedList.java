@@ -16,6 +16,7 @@ import java.util.function.Predicate;
  */
 public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
+    private final Object lock = new Object();
     private boolean locked = false;
 
     /**
@@ -47,16 +48,20 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
      * Returns if the List is currently in a locked state
      * @return The lock state of the List, true being locked, false being unlocked
      */
-    public synchronized boolean isLocked() {
-        return locked;
+    public boolean isLocked() {
+        synchronized (lock) {
+            return this.locked;
+        }
     }
 
     /**
      * Sets if the List should currently be locked (true) or unlocked (false)
      * @param locked The lock state to set the list as
      */
-    public synchronized void setLocked(boolean locked) {
-        this.locked = locked;
+    public void setLocked(boolean locked) {
+        synchronized (lock) {
+            this.locked = locked;
+        }
     }
 
     /**
