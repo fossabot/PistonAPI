@@ -47,7 +47,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
      * Returns if the List is currently in a locked state
      * @return The lock state of the List, true being locked, false being unlocked
      */
-    public boolean isLocked() {
+    public synchronized boolean isLocked() {
         return locked;
     }
 
@@ -55,7 +55,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
      * Sets if the List should currently be locked (true) or unlocked (false)
      * @param locked The lock state to set the list as
      */
-    public void setLocked(boolean locked) {
+    public synchronized void setLocked(boolean locked) {
         this.locked = locked;
     }
 
