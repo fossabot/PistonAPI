@@ -14,8 +14,17 @@
     <name>Piston API</name>
 
     <properties>
-        <buildtag.prefix>git-StickyProtocol-</buildtag.prefix>
+        <buildtag.prefix>git-Piston-</buildtag.prefix>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20171018</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -25,7 +34,7 @@
                 <version>0.2</version>
                 <configuration>
                     <format>${buildtag.prefix}%s${buildtag.suffix}</format>
-                    <descriptionProperty>api.version</descriptionProperty>
+                    <scmDirectory>../.git/modules/piston-api/</scmDirectory>
                 </configuration>
                 <executions>
                     <execution>

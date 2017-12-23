@@ -1,5 +1,5 @@
 {
   "Specification-Title": "${project.name}",
-  "Specification-Version": "${api.version}",
-  "Specification-Vendor": "${project.organisation.name}"
+  "Specification-Version": "${describe}",
+  "Specification-Vendor": "${project.organization.name}"
 }
