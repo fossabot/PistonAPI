@@ -17,6 +17,8 @@ public interface PistonInput {
 
     long readLong() throws IOException;
 
+    int readUnsignedShort() throws IOException;
+
     /**
      * Read a UUID
      * @return The UUID that is available in this stream
