@@ -1,14 +1,16 @@
 package org.laxio.piston.piston.protocol;
 
+import org.laxio.piston.piston.PistonServer;
+
 /**
  * Interface implemented by Protocol packets
  */
 public interface Packet {
 
     /**
-     * Returns the ID of this Packet
-     * @return The Packet ID
+     * Returns the server that this Packet belongs too
+     * @return The server that this packet belongs too
      */
-    int getId();
+    PistonServer getServer();
 
 }
