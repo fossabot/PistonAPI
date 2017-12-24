@@ -16,7 +16,7 @@ public class Version {
     private String prefix;
     private int major;
     private int minor;
-    private int patch;
+    private int patch = -1;
     private String suffix;
 
     private boolean patchVersion;
@@ -82,6 +82,7 @@ public class Version {
      *
      * @param string The string to build a version based on
      * @return A constructed Version based on the supplied string
+     * @throws VersionParseException Thrown when there is an issue parsing the given string into a valid version
      */
     public static Version parse(String string) {
         Matcher matcher = pattern.matcher(string);
@@ -95,8 +96,25 @@ public class Version {
             version.prefix = matcher.group("prefix");
             version.suffix = matcher.group("suffix");
 
-            version.major = Integer.parseInt(matcher.group("major"));
-            version.minor = Integer.parseInt(matcher.group("minor"));
+            String majorStr = matcher.group("major");
+            if (majorStr == null)
+                throw new VersionParseException("No major version", string);
+
+            try {
+                version.major = Integer.parseInt(majorStr);
+            } catch (NumberFormatException ex) {
+                throw new VersionParseException("Major version could not be parsed into integer", ex, string);
+            }
+
+            String minorStr = matcher.group("minor");
+            if (minorStr == null)
+                throw new VersionParseException("No minor version", string);
+
+            try {
+                version.minor = Integer.parseInt(minorStr);
+            } catch (NumberFormatException ex) {
+                throw new VersionParseException("Minor version could not be parsed into integer", ex, string);
+            }
 
             String patchStr = matcher.group("patch");
             version.patchVersion = patchStr != null;

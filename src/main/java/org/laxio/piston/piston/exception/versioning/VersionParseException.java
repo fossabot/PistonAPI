@@ -14,6 +14,11 @@ public class VersionParseException extends PistonRuntimeException {
         this.version = version;
     }
 
+    public VersionParseException(String message, Throwable cause, String version) {
+        super(message, cause);
+        this.version = version;
+    }
+
     /**
      * Get the version that had issues while parsing
      * @return The version with parsing issues
