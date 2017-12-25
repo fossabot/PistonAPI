@@ -2,6 +2,8 @@ package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.exception.protocol.stream.UnconfiguredStreamException;
 
+import java.util.logging.Logger;
+
 public class StreamManager {
 
     public static final StreamManager MANAGER = new StreamManager();
@@ -13,10 +15,12 @@ public class StreamManager {
      * @return The current handler
      */
     public StreamHandler getHandler() {
-        if (handler == null)
-            throw new UnconfiguredStreamException();
+        synchronized (MANAGER) {
+            if (handler == null)
+                throw new UnconfiguredStreamException();
 
-        return handler;
+            return handler;
+        }
     }
 
     /**
@@ -24,11 +28,13 @@ public class StreamManager {
      * @param handler The handler to set
      */
     public void setHandler(StreamHandler handler) {
-        if (this.handler != null) {
-            // TODO: log handler overwrite
-        }
+        synchronized (MANAGER) {
+            if (this.handler != null) {
+                Logger.getGlobal().info("Stream Handler set to " + handler.getClass());
+            }
 
-        this.handler = handler;
+            this.handler = handler;
+        }
     }
 
 }

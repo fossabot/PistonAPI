@@ -5,6 +5,10 @@ import org.laxio.piston.piston.exception.versioning.VersionParseException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests if the supplied input is being correctly read
+ * @see Version
+ */
 class VersionTest {
 
     @Test

@@ -6,10 +6,4 @@ import org.laxio.piston.piston.exception.PistonRuntimeException;
  * Thrown when the StreamHandler has not been configured
  * @see org.laxio.piston.piston.protocol.stream.StreamManager
  */
-public class UnconfiguredStreamException extends PistonRuntimeException {
-
-    public UnconfiguredStreamException() {
-        super();
-    }
-
-}
+public class UnconfiguredStreamException extends PistonRuntimeException {}
