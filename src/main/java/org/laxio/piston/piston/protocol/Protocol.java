@@ -10,6 +10,8 @@ public interface Protocol {
 
     Packet getPacket(ProtocolState state, PacketDirection direction, int id) throws UnsupportedPacketException, PacketNotFoundException;
 
+    int getId(Packet packet) throws PacketNotFoundException;
+
     String getVersion();
 
     String getMinecraftVersion();
