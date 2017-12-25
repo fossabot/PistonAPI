@@ -1,14 +1,15 @@
 package org.laxio.piston.piston.protocol;
 
+import org.laxio.piston.piston.exception.protocol.packet.PacketNotFoundException;
+import org.laxio.piston.piston.exception.protocol.packet.UnsupportedPacketException;
+
 /**
  * Protocol interface implemented by StickyProtocol
  */
 public interface Protocol {
 
-    /**
-     * Gets the version of the
-     * @return
-     */
+    Packet getPacket(ProtocolState state, PacketDirection direction, int id) throws UnsupportedPacketException, PacketNotFoundException;
+
     String getVersion();
 
     String getMinecraftVersion();
