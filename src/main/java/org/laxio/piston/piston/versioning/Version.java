@@ -78,33 +78,12 @@ public class Version implements Comparable<Version> {
 
     @Override
     public int compareTo(Version v) {
-        if (this.major > v.major) {
-            return 1;
-        } else if (v.major > this.major) {
-            return -1;
-        }
-
-        if (this.minor > v.minor) {
-            return 1;
-        } else if (v.minor > this.minor) {
-            return -1;
-        }
-
-        if (this.hasPatchVersion() && !v.hasPatchVersion()) {
-            return 1;
-        } else if (!this.hasPatchVersion() && v.hasPatchVersion()) {
-            return -1;
-        }
-
-        if (!this.hasPatchVersion() && !v.hasPatchVersion()) {
-            return 0;
-        }
-
-        if (this.patch > v.patch) {
-            return 1;
-        } else if (v.patch > this.patch) {
-            return -1;
-        }
+        if (this.major != v.major)
+            return this.major - v.major;
+        else if (this.minor != v.minor)
+            return this.minor - v.minor;
+        else if (this.patch != v.patch)
+            return this.patch - v.patch;
 
         return 0;
     }
