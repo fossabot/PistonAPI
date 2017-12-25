@@ -11,6 +11,8 @@ import java.util.UUID;
  */
 public interface PistonInput {
 
+    int readableBytes();
+
     int read() throws IOException;
 
     byte readByte() throws IOException;
