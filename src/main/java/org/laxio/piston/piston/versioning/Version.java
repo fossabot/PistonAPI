@@ -9,7 +9,7 @@ import java.util.regex.Pattern;
  * Represents a version string
  * Format: [prefix-]major.minor[.patch][-suffix]
  */
-public class Version {
+public class Version implements Comparable<Version> {
 
     private static final Pattern pattern = Pattern.compile("((?<prefix>.*)-)?(?<major>[0-9]+)\\.(?<minor>[0-9]+)(\\.(?<patch>[0-9]+))?(-(?<suffix>.*))?");
 
@@ -74,6 +74,66 @@ public class Version {
      */
     public boolean hasPatchVersion() {
         return patchVersion;
+    }
+
+    @Override
+    public int compareTo(Version v) {
+        if (this.major > v.major) {
+            return 1;
+        } else if (v.major > this.major) {
+            return -1;
+        }
+
+        if (this.minor > v.minor) {
+            return 1;
+        } else if (v.minor > this.minor) {
+            return -1;
+        }
+
+        if (this.hasPatchVersion() && !v.hasPatchVersion()) {
+            return 1;
+        } else if (!this.hasPatchVersion() && v.hasPatchVersion()) {
+            return -1;
+        }
+
+        if (!this.hasPatchVersion() && !v.hasPatchVersion()) {
+            return 0;
+        }
+
+        if (this.patch > v.patch) {
+            return 1;
+        } else if (v.patch > this.patch) {
+            return -1;
+        }
+
+        return 0;
+    }
+
+    /**
+     * Checks if this version has a greater semver value than the supplied version
+     * @param version The version to check against
+     * @return True if this version has greater value than the supplied version, false otherwise
+     */
+    public boolean isGreaterThan(Version version) {
+        return this.compareTo(version) > 0;
+    }
+
+    /**
+     * Checks if this version and the supplied version have matching values
+     * @param version The version to check against
+     * @return true if the versions have equal value, otherwise false
+     */
+    public boolean isEqualTo(Version version) {
+        return this.compareTo(version) == 0;
+    }
+
+    /**
+     * Checks if this version has a lesser semver value than the supplied version
+     * @param version The version to check against
+     * @return True if this version has lesser value than the supplied version, false otherwise
+     */
+    public boolean isLessThan(Version version) {
+        return this.compareTo(version) < 0;
     }
 
     /**
