@@ -30,7 +30,7 @@ public interface Packet {
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be read
      */
-    void read(PistonInput input) throws IOException;
+    void onRead(PistonInput input) throws IOException;
 
     /**
      * Called by the server when a Packet is being read
@@ -38,7 +38,7 @@ public interface Packet {
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be read
      */
-    void _read(PistonInput input) throws IOException;
+    void read(PistonInput input) throws IOException;
 
     /**
      * Writes the data to the output
@@ -46,7 +46,7 @@ public interface Packet {
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be written
      */
-    void write(PistonOutput output) throws IOException;
+    void onWrite(PistonOutput output) throws IOException;
 
     /**
      * Called by the server when a Packet is being written
@@ -54,6 +54,6 @@ public interface Packet {
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be written
      */
-    void _write(PistonOutput output) throws IOException;
+    void write(PistonOutput output) throws IOException;
 
 }
