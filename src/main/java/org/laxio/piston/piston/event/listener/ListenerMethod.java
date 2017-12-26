@@ -34,4 +34,12 @@ public class ListenerMethod<T> {
         }
     }
 
+    @Override
+    public String toString() {
+        return "ListenerMethod{" +
+                "listener=" + listener +
+                ", method=" + method +
+                '}';
+    }
+
 }
