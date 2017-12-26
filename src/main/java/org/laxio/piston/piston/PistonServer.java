@@ -1,5 +1,6 @@
 package org.laxio.piston.piston;
 
+import org.laxio.piston.piston.event.ListenerManager;
 import org.laxio.piston.piston.protocol.Protocol;
 
 public interface PistonServer {
@@ -9,5 +10,7 @@ public interface PistonServer {
     String getMinecraftVersion();
 
     Protocol getProtocol();
+
+    ListenerManager getManager();
 
 }

@@ -12,6 +12,19 @@ import java.io.IOException;
 public interface Packet {
 
     /**
+     * Returns the connection that this Packet belongs too
+     * @return The connection that this packet belongs too
+     */
+    Connection getConnection();
+
+    /**
+     * Sets the connection that this Packet belongs to
+     * @param connection The connection to set
+     * @throws org.laxio.piston.piston.exception.protocol.packet.PacketConfigurationException When there is already a connection set
+     */
+    void setConnection(Connection connection);
+
+    /**
      * Returns the server that this Packet belongs too
      * @return The server that this packet belongs too
      */
@@ -23,6 +36,14 @@ public interface Packet {
      * @throws org.laxio.piston.piston.exception.protocol.packet.PacketConfigurationException When there is already a server set
      */
     void setServer(PistonServer server);
+
+    /**
+     * Responds to this packet with the supplied response
+     * @param packet The packet to respond with
+     */
+    default void reply(Packet packet) {
+        getConnection().sendPacket(packet);
+    }
 
     /**
      * Reads the data from the input
