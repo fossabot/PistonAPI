@@ -1,7 +1,9 @@
 package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.data.Identifier;
+import org.laxio.piston.piston.entity.Velocity;
 import org.laxio.piston.piston.player.Player;
+import org.laxio.piston.piston.world.Location;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -17,9 +19,21 @@ public interface PistonInput {
 
     byte readByte() throws IOException;
 
+    byte[] readBytes() throws IOException;
+
+    byte[] readBytes(int length) throws IOException;
+
     long readLong() throws IOException;
 
     int readUnsignedShort() throws IOException;
+
+    double readDouble() throws IOException;
+
+    float readFloat() throws IOException;
+
+    short readShort() throws IOException;
+
+    int readInt() throws IOException;
 
     /**
      * Read a UUID
@@ -27,6 +41,14 @@ public interface PistonInput {
      * @throws IOException
      */
     UUID readUUID() throws IOException;
+
+    /**
+     * Read a UUID
+     * @param dashes If true read the UUID as a string with dashes
+     * @return The UUID that is available in this stream
+     * @throws IOException
+     */
+    UUID readUUID(boolean dashes) throws IOException;
 
     /**
      * Reads a string
@@ -63,5 +85,13 @@ public interface PistonInput {
     default Player readPlayer() throws IOException {
         return StreamManager.MANAGER.getHandler().readPlayer(this);
     }
+
+    Location readLocation() throws IOException;
+
+    Location readLocation(boolean yawPitch) throws IOException;
+
+    float readRotation() throws IOException;
+
+    Velocity readVelocity() throws IOException;
 
 }

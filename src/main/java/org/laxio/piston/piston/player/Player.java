@@ -1,4 +1,9 @@
 package org.laxio.piston.piston.player;
 
-public interface Player {
+import org.laxio.piston.piston.entity.Entity;
+
+public interface Player extends Entity {
+
+    String getName();
+
 }
