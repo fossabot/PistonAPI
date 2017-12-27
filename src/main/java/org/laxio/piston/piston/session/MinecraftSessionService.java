@@ -6,4 +6,6 @@ public interface MinecraftSessionService {
 
     SessionResponse hasJoined(Profile profile, String serverId) throws SessionAuthenticationException;
 
+    SessionResponse hasJoined(Profile profile, String serverId, String ip) throws SessionAuthenticationException;
+
 }

@@ -4,6 +4,7 @@ import org.laxio.piston.piston.event.ListenerManager;
 import org.laxio.piston.piston.protocol.Protocol;
 import org.laxio.piston.piston.session.MinecraftSessionService;
 
+import java.net.InetSocketAddress;
 import java.security.KeyPair;
 
 public interface PistonServer {
@@ -21,5 +22,7 @@ public interface PistonServer {
     boolean isOnlineMode();
 
     MinecraftSessionService getSessionService();
+
+    InetSocketAddress getBindAddress();
 
 }
