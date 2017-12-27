@@ -2,6 +2,7 @@ package org.laxio.piston.piston;
 
 import org.laxio.piston.piston.event.ListenerManager;
 import org.laxio.piston.piston.protocol.Protocol;
+import org.laxio.piston.piston.session.MinecraftSessionService;
 
 import java.security.KeyPair;
 
@@ -18,5 +19,7 @@ public interface PistonServer {
     KeyPair getKeyPair();
 
     boolean isOnlineMode();
+
+    MinecraftSessionService getSessionService();
 
 }

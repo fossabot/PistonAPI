@@ -2,7 +2,7 @@ package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.data.Identifier;
 import org.laxio.piston.piston.entity.Velocity;
-import org.laxio.piston.piston.player.Player;
+import org.laxio.piston.piston.entity.player.Player;
 import org.laxio.piston.piston.world.Location;
 
 import java.io.IOException;

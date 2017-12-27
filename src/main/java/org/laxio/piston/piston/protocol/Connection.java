@@ -8,4 +8,6 @@ public interface Connection {
 
     void sendPacket(Packet packet);
 
+    boolean isEncrypted();
+
 }

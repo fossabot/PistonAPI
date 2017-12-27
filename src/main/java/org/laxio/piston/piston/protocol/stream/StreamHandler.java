@@ -1,6 +1,6 @@
 package org.laxio.piston.piston.protocol.stream;
 
-import org.laxio.piston.piston.player.Player;
+import org.laxio.piston.piston.entity.player.Player;
 
 import java.io.IOException;
 
