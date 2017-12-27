@@ -32,6 +32,7 @@ public class PistonModule {
 
     /**
      * Gets the title of this module
+     *
      * @return The title of the module
      */
     public String getTitle() {
@@ -40,6 +41,7 @@ public class PistonModule {
 
     /**
      * Gets the version of this module
+     *
      * @return The version of this module
      */
     public Version getVersion() {
@@ -48,6 +50,7 @@ public class PistonModule {
 
     /**
      * Gets the vendor of this module
+     *
      * @return The vendor of this module
      */
     public String getVendor() {
@@ -56,6 +59,7 @@ public class PistonModule {
 
     /**
      * Get the JSON object used to create this module
+     *
      * @return The JSON object used to create this module
      */
     public JSONObject getJSON() {
@@ -64,6 +68,7 @@ public class PistonModule {
 
     /**
      * Checks if this module has a reference JSON object
+     *
      * @return true if this module has a JSON object, false otherwise
      */
     public boolean hasJSON() {
@@ -72,6 +77,7 @@ public class PistonModule {
 
     /**
      * Builds a PistonModule based on the supplied class and reference tag
+     *
      * @param cls The class to get the package name from
      * @param tag The prefix tag, usually Specification or Implementation
      * @return A constructed PistonModule for the supplied arguments
@@ -84,6 +90,7 @@ public class PistonModule {
 
     /**
      * Builds a PistonModule based on the supplied class and reference tag
+     *
      * @param pkg The package name
      * @param tag The prefix tag, usually Specification or Implementation
      * @return A constructed PistonModule for the supplied arguments
@@ -96,6 +103,7 @@ public class PistonModule {
 
     /**
      * Builds a JSON object based on the package name of the supplied class
+     *
      * @param cls The class to get the package name from
      * @return The JSON object for that class
      * @throws IOException
@@ -106,6 +114,7 @@ public class PistonModule {
 
     /**
      * Builds a JSON object using the supplied path
+     *
      * @param path The path
      * @return The JSON object for the supplied path
      * @throws IOException
@@ -116,8 +125,9 @@ public class PistonModule {
 
     /**
      * Builds a module using the supplied JSON object and tag
+     *
      * @param json The JSON object to look in
-     * @param tag The prefix tag, usually Specification or Implementation
+     * @param tag  The prefix tag, usually Specification or Implementation
      * @return A constructed module for the supplied parameters
      */
     private static PistonModule build(JSONObject json, String tag) {
@@ -131,6 +141,7 @@ public class PistonModule {
 
     /**
      * Translates a stream into a single string
+     *
      * @param input The stream to translate
      * @return The complete string
      * @throws IOException
@@ -143,6 +154,7 @@ public class PistonModule {
 
     /**
      * Returns the test prefix if debug mode is enabled
+     *
      * @return "test-" if debug mode is enabled, otherwise ""
      */
     private static String debug() {

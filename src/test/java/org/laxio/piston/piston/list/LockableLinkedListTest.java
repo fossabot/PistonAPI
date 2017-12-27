@@ -3,7 +3,7 @@ package org.laxio.piston.piston.list;
 import org.junit.jupiter.api.Test;
 import org.laxio.piston.piston.exception.list.ListLockedException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 class LockableLinkedListTest {
 

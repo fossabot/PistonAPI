@@ -15,6 +15,7 @@ public interface Entity {
     /**
      * Gets the data int for this entity
      * See <a href="http://wiki.vg/Object_Data">here</a> for details
+     *
      * @return The data int for this entity
      */
     int getData();

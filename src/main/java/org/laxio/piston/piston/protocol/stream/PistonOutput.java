@@ -36,50 +36,56 @@ public interface PistonOutput {
 
     /**
      * Writes the supplied UUID
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
+     *
      * @param data The UUID to write
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeUUID(UUID data) throws IOException;
 
     /**
      * Writes the supplied UUID
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
-     * @param data The UUID to write
+     *
+     * @param data   The UUID to write
      * @param dashes If true write the UUID as a string with dashes
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeUUID(UUID data, boolean dashes) throws IOException;
 
     /**
-     * Writes the supplied String 
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
+     * Writes the supplied String
+     *
      * @param data The String to write
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeString(String data) throws IOException;
 
     /**
-     * Writes the supplied VarInt 
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
+     * Writes the supplied VarInt
+     *
      * @param data The VarInt to write
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeVarInt(int data) throws IOException;
 
     /**
-     * Writes the supplied VarLong 
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
+     * Writes the supplied VarLong
+     *
      * @param data The VarLong to write
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeVarLong(long data) throws IOException;
 
     /**
-     * Writes the supplied Identifier 
-     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
+     * Writes the supplied Identifier
+     *
      * @param data The Identifier to write
      * @throws IOException
+     * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
     PistonOutput writeIdentifier(Identifier data) throws IOException;
 

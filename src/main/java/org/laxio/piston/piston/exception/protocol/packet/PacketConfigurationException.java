@@ -17,6 +17,7 @@ public class PacketConfigurationException extends PistonRuntimeException {
 
     /**
      * Gets that Packet that threw the exception
+     *
      * @return The packet
      */
     public Packet getPacket() {

@@ -34,6 +34,7 @@ public class ProtocolConfigurationException extends PistonException {
 
     /**
      * Get the Protocol which fired the exception
+     *
      * @return The Protocol which fired the exception
      */
     public Protocol getProtocol() {
@@ -42,6 +43,7 @@ public class ProtocolConfigurationException extends PistonException {
 
     /**
      * The Packet class which caused the exception
+     *
      * @return The Packet class which caused the exception, if packet was not the cause, returns null
      */
     public Class<? extends Packet> getPacket() {

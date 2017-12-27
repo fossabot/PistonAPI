@@ -13,6 +13,7 @@ public @interface PacketHandler {
 
     /**
      * Used to define the priority which this method should be fired on
+     *
      * @return the priority
      */
     ListenerPriority priority() default ListenerPriority.NORMAL;

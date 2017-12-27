@@ -14,6 +14,7 @@ public enum PistonModuleType {
 
     /**
      * Gets the module that has been set for this type
+     *
      * @return The module set for this type
      */
     public PistonModule getModule() {
@@ -22,6 +23,7 @@ public enum PistonModuleType {
 
     /**
      * Sets the module for this type
+     *
      * @param module The module to set
      */
     public void setModule(PistonModule module) {

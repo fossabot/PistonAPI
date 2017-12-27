@@ -16,6 +16,7 @@ public class InvalidStateException extends PistonRuntimeException {
 
     /**
      * Gets the state id which is invalid
+     *
      * @return The invalid state id
      */
     public int getState() {

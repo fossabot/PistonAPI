@@ -8,11 +8,11 @@ import java.util.function.Predicate;
 
 /**
  * Implementation of
- * @see java.util.LinkedList
- *
- * Using a locking system to prevent adding/removing of new items
  *
  * @param <E>
+ * @see java.util.LinkedList
+ * <p>
+ * Using a locking system to prevent adding/removing of new items
  */
 public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
@@ -28,6 +28,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * Constructs the LinkedList using an existing collection
+     *
      * @param collection The collection to use
      */
     public LockableLinkedList(Collection<? extends E> collection) {
@@ -36,8 +37,9 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * Constructs the LinkedList using an existing collection, setting if the List should start locked or unlocked
+     *
      * @param collection The collection to use
-     * @param locked The state of the lock after constructing
+     * @param locked     The state of the lock after constructing
      */
     public LockableLinkedList(Collection<? extends E> collection, boolean locked) {
         super(collection);
@@ -46,6 +48,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * Returns if the List is currently in a locked state
+     *
      * @return The lock state of the List, true being locked, false being unlocked
      */
     public boolean isLocked() {
@@ -56,6 +59,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * Sets if the List should currently be locked (true) or unlocked (false)
+     *
      * @param locked The lock state to set the list as
      */
     public void setLocked(boolean locked) {
@@ -66,6 +70,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -78,6 +83,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -90,6 +96,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -102,6 +109,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -114,6 +122,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -126,6 +135,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -138,6 +148,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -150,6 +161,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -162,6 +174,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -174,6 +187,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -186,6 +200,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -198,6 +213,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -210,6 +226,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -222,6 +239,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override
@@ -234,6 +252,7 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
 
     /**
      * {@inheritDoc}
+     *
      * @throws ListLockedException If the List is currently locked
      */
     @Override

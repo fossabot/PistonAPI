@@ -30,6 +30,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Gets the prefix of the version
+     *
      * @return The prefix of the version
      */
     public String getPrefix() {
@@ -38,6 +39,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Gets the major version number of the version
+     *
      * @return The major version number
      */
     public int getMajor() {
@@ -46,6 +48,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Gets the minor version number of the version
+     *
      * @return The minor version number
      */
     public int getMinor() {
@@ -54,6 +57,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Gets the patch version number of the version
+     *
      * @return The patch version number, -1 if there is no patch version number
      */
     public int getPatch() {
@@ -62,6 +66,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Gets the suffix of the version
+     *
      * @return The suffix of the version
      */
     public String getSuffix() {
@@ -70,6 +75,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Returns if this version has a patch version number
+     *
      * @return True if patch is present, false otherwise
      */
     public boolean hasPatchVersion() {
@@ -90,6 +96,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Checks if this version has a greater semver value than the supplied version
+     *
      * @param version The version to check against
      * @return True if this version has greater value than the supplied version, false otherwise
      */
@@ -99,6 +106,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Checks if this version and the supplied version have matching values
+     *
      * @param version The version to check against
      * @return true if the versions have equal value, otherwise false
      */
@@ -108,6 +116,7 @@ public class Version implements Comparable<Version> {
 
     /**
      * Checks if this version has a lesser semver value than the supplied version
+     *
      * @param version The version to check against
      * @return True if this version has lesser value than the supplied version, false otherwise
      */

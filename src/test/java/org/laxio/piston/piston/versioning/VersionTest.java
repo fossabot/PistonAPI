@@ -3,10 +3,11 @@ package org.laxio.piston.piston.versioning;
 import org.junit.jupiter.api.Test;
 import org.laxio.piston.piston.exception.versioning.VersionParseException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.fail;
 
 /**
  * Tests if the supplied input is being correctly read
+ *
  * @see Version
  */
 class VersionTest {

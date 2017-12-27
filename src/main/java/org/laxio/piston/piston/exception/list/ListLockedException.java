@@ -5,6 +5,7 @@ import org.laxio.piston.piston.list.LockableLinkedList;
 
 /**
  * Thrown by
+ *
  * @see LockableLinkedList
  * when an add/remove action is called on a locked List
  */

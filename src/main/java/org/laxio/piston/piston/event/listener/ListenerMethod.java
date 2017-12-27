@@ -24,6 +24,7 @@ public class ListenerMethod<T> {
 
     /**
      * Invokes the method using the supplied object
+     *
      * @param object The object to invoke as an argument
      */
     public void call(T object) {

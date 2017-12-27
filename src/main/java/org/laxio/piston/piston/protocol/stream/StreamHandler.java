@@ -11,6 +11,7 @@ public interface StreamHandler {
 
     /**
      * Reads the player from the input
+     *
      * @param input The input to read from
      * @return The Player object reference for this handler
      */
@@ -18,6 +19,7 @@ public interface StreamHandler {
 
     /**
      * Writes the player reference to the output
+     *
      * @param output The output to write to
      * @param player The player to write
      */

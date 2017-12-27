@@ -12,6 +12,7 @@ public class Identifier {
 
     /**
      * Gets the namespace of this identifier
+     *
      * @return The string namespace of this identifier
      */
     public String getNamespace() {
@@ -20,6 +21,7 @@ public class Identifier {
 
     /**
      * Gets the name of this identifier
+     *
      * @return The string name of this identifier
      */
     public String getName() {
@@ -28,6 +30,7 @@ public class Identifier {
 
     /**
      * Returns the formatted identifier
+     *
      * @return [namespace]:[name]
      */
     @Override

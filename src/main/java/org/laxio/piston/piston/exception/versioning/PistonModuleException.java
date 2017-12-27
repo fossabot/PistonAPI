@@ -17,6 +17,7 @@ public class PistonModuleException extends PistonRuntimeException {
 
     /**
      * Gets the type of module which caused the exception
+     *
      * @return The module type
      */
     public PistonModuleType getType() {

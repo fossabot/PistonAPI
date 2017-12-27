@@ -12,6 +12,7 @@ public class StreamManager {
 
     /**
      * Gets the handler currently being used by Piston
+     *
      * @return The current handler
      */
     public StreamHandler getHandler() {
@@ -25,6 +26,7 @@ public class StreamManager {
 
     /**
      * Sets the handler to be used
+     *
      * @param handler The handler to set
      */
     public void setHandler(StreamHandler handler) {

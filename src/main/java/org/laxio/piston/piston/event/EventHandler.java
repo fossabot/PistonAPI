@@ -13,12 +13,14 @@ public @interface EventHandler {
 
     /**
      * Used to define the priority which this method should be fired on
+     *
      * @return the priority
      */
     ListenerPriority priority() default ListenerPriority.NORMAL;
 
     /**
      * Used to define if this method should listen to all events, including those which have been cancelled
+     *
      * @return true if this method ignores cancelled events, false otherwise
      */
     boolean ignoreCancelled() default true;

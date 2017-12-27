@@ -1,6 +1,9 @@
 package org.laxio.piston.piston.event;
 
-import org.laxio.piston.piston.event.listener.*;
+import org.laxio.piston.piston.event.listener.EventMethod;
+import org.laxio.piston.piston.event.listener.Listener;
+import org.laxio.piston.piston.event.listener.MethodList;
+import org.laxio.piston.piston.event.listener.PacketMethod;
 import org.laxio.piston.piston.exception.event.ListenerConfigurationException;
 import org.laxio.piston.piston.protocol.Packet;
 
@@ -27,6 +30,7 @@ public class ListenerManager {
 
     /**
      * Registers the supplied listener, checking for any packet or event methods with handlers
+     *
      * @param listener The listener to add
      */
     public void register(Listener listener) {

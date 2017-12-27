@@ -5,6 +5,7 @@ import java.util.Map;
 
 /**
  * A reversible HashMash
+ *
  * @param <K> Key type
  * @param <V> Value type
  */
