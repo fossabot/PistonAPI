@@ -124,6 +124,32 @@ public class Version implements Comparable<Version> {
         return this.compareTo(version) < 0;
     }
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+
+        if (this.prefix != null) {
+            builder.append(this.prefix);
+            builder.append("-");
+        }
+
+        builder.append(this.major);
+        builder.append(".");
+        builder.append(this.minor);
+
+        if (this.patchVersion) {
+            builder.append(".");
+            builder.append(this.patch);
+        }
+
+        if (this.suffix != null) {
+            builder.append("-");
+            builder.append(this.suffix);
+        }
+
+        return builder.toString();
+    }
+
     /**
      * Builds a version based on the supplied string
      * Format: [prefix-]major.minor[.patch][-suffix]
@@ -175,32 +201,6 @@ public class Version implements Comparable<Version> {
             throw new VersionParseException("No matches found", string);
 
         return version;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-
-        if (this.prefix != null) {
-            builder.append(this.prefix);
-            builder.append("-");
-        }
-
-        builder.append(this.major);
-        builder.append(".");
-        builder.append(this.minor);
-
-        if (this.patchVersion) {
-            builder.append(".");
-            builder.append(this.patch);
-        }
-
-        if (this.suffix != null) {
-            builder.append("-");
-            builder.append(this.suffix);
-        }
-
-        return builder.toString();
     }
 
 }

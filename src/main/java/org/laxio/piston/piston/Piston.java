@@ -9,13 +9,13 @@ public class Piston {
 
     private final static List<PistonModule> modules;
 
-    public static List<PistonModule> getModules() {
-        return modules;
-    }
-
     static {
         modules = new LockableLinkedList<>();
 
+    }
+
+    public static List<PistonModule> getModules() {
+        return modules;
     }
 
 }
