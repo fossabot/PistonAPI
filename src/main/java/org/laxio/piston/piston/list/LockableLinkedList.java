@@ -10,6 +10,7 @@ import java.util.function.Predicate;
  * Implementation of
  *
  * @param <E>
+ *
  * @see java.util.LinkedList
  * <p>
  * Using a locking system to prevent adding/removing of new items

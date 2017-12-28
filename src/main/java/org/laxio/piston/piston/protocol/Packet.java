@@ -22,6 +22,7 @@ public interface Packet {
      * Sets the connection that this Packet belongs to
      *
      * @param connection The connection to set
+     *
      * @throws org.laxio.piston.piston.exception.protocol.packet.PacketConfigurationException When there is already a connection set
      */
     void setConnection(Connection connection);
@@ -37,6 +38,7 @@ public interface Packet {
      * Sets the server that this Packet belongs to
      *
      * @param server The server to set
+     *
      * @throws org.laxio.piston.piston.exception.protocol.packet.PacketConfigurationException When there is already a server set
      */
     void setServer(PistonServer server);
@@ -54,6 +56,7 @@ public interface Packet {
      * Reads the data from the input
      *
      * @param input The source of data
+     *
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be read
      */
@@ -63,6 +66,7 @@ public interface Packet {
      * Called by the server when a Packet is being read
      *
      * @param input The input source
+     *
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be read
      */
@@ -72,6 +76,7 @@ public interface Packet {
      * Writes the data to the output
      *
      * @param output The output destination
+     *
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be written
      */
@@ -81,6 +86,7 @@ public interface Packet {
      * Called by the server when a Packet is being written
      *
      * @param output The output destination
+     *
      * @throws IOException
      * @throws UnsupportedOperationException If this packet can't be written
      */

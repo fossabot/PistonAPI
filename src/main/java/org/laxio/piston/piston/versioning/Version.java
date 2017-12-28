@@ -98,6 +98,7 @@ public class Version implements Comparable<Version> {
      * Checks if this version has a greater semver value than the supplied version
      *
      * @param version The version to check against
+     *
      * @return True if this version has greater value than the supplied version, false otherwise
      */
     public boolean isGreaterThan(Version version) {
@@ -108,6 +109,7 @@ public class Version implements Comparable<Version> {
      * Checks if this version and the supplied version have matching values
      *
      * @param version The version to check against
+     *
      * @return true if the versions have equal value, otherwise false
      */
     public boolean isEqualTo(Version version) {
@@ -118,6 +120,7 @@ public class Version implements Comparable<Version> {
      * Checks if this version has a lesser semver value than the supplied version
      *
      * @param version The version to check against
+     *
      * @return True if this version has lesser value than the supplied version, false otherwise
      */
     public boolean isLessThan(Version version) {
@@ -155,7 +158,9 @@ public class Version implements Comparable<Version> {
      * Format: [prefix-]major.minor[.patch][-suffix]
      *
      * @param string The string to build a version based on
+     *
      * @return A constructed Version based on the supplied string
+     *
      * @throws VersionParseException Thrown when there is an issue parsing the given string into a valid version
      */
     public static Version parse(String string) {

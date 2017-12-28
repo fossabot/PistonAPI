@@ -13,6 +13,7 @@ public interface StreamHandler {
      * Reads the player from the input
      *
      * @param input The input to read from
+     *
      * @return The Player object reference for this handler
      */
     Player readPlayer(PistonInput input) throws IOException;

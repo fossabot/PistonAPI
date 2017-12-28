@@ -39,6 +39,7 @@ public interface PistonInput {
      * Read a UUID
      *
      * @return The UUID that is available in this stream
+     *
      * @throws IOException
      */
     UUID readUUID() throws IOException;
@@ -47,7 +48,9 @@ public interface PistonInput {
      * Read a UUID
      *
      * @param dashes If true read the UUID as a string with dashes
+     *
      * @return The UUID that is available in this stream
+     *
      * @throws IOException
      */
     UUID readUUID(boolean dashes) throws IOException;
@@ -56,6 +59,7 @@ public interface PistonInput {
      * Reads a string
      *
      * @return The string available
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -65,6 +69,7 @@ public interface PistonInput {
      * Reads a VarInt
      *
      * @return The VarInt available
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -74,6 +79,7 @@ public interface PistonInput {
      * Reads a VarLong
      *
      * @return The VarLong available
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -83,6 +89,7 @@ public interface PistonInput {
      * Reads an Identifier
      *
      * @return The Identifier available
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */

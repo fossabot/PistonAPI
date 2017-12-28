@@ -80,7 +80,9 @@ public class PistonModule {
      *
      * @param cls The class to get the package name from
      * @param tag The prefix tag, usually Specification or Implementation
+     *
      * @return A constructed PistonModule for the supplied arguments
+     *
      * @throws IOException
      */
     public static PistonModule build(Class<?> cls, String tag) throws IOException {
@@ -93,7 +95,9 @@ public class PistonModule {
      *
      * @param pkg The package name
      * @param tag The prefix tag, usually Specification or Implementation
+     *
      * @return A constructed PistonModule for the supplied arguments
+     *
      * @throws IOException
      */
     public static PistonModule build(String pkg, String tag) throws IOException {
@@ -105,7 +109,9 @@ public class PistonModule {
      * Builds a JSON object based on the package name of the supplied class
      *
      * @param cls The class to get the package name from
+     *
      * @return The JSON object for that class
+     *
      * @throws IOException
      */
     private static JSONObject getJSON(Class<?> cls) throws IOException {
@@ -116,7 +122,9 @@ public class PistonModule {
      * Builds a JSON object using the supplied path
      *
      * @param path The path
+     *
      * @return The JSON object for the supplied path
+     *
      * @throws IOException
      */
     private static JSONObject getJSON(String path) throws IOException {
@@ -128,6 +136,7 @@ public class PistonModule {
      *
      * @param json The JSON object to look in
      * @param tag  The prefix tag, usually Specification or Implementation
+     *
      * @return A constructed module for the supplied parameters
      */
     private static PistonModule build(JSONObject json, String tag) {
@@ -143,7 +152,9 @@ public class PistonModule {
      * Translates a stream into a single string
      *
      * @param input The stream to translate
+     *
      * @return The complete string
+     *
      * @throws IOException
      */
     private static String read(InputStream input) throws IOException {

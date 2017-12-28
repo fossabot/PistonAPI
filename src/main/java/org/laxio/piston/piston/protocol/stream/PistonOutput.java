@@ -38,6 +38,7 @@ public interface PistonOutput {
      * Writes the supplied UUID
      *
      * @param data The UUID to write
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -48,6 +49,7 @@ public interface PistonOutput {
      *
      * @param data   The UUID to write
      * @param dashes If true write the UUID as a string with dashes
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -57,6 +59,7 @@ public interface PistonOutput {
      * Writes the supplied String
      *
      * @param data The String to write
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -66,6 +69,7 @@ public interface PistonOutput {
      * Writes the supplied VarInt
      *
      * @param data The VarInt to write
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -75,6 +79,7 @@ public interface PistonOutput {
      * Writes the supplied VarLong
      *
      * @param data The VarLong to write
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
@@ -84,6 +89,7 @@ public interface PistonOutput {
      * Writes the supplied Identifier
      *
      * @param data The Identifier to write
+     *
      * @throws IOException
      * @see <a href="http://wiki.vg/Protocol#Data_types">Protocol Data Types</a>
      */
