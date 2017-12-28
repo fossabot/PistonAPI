@@ -129,9 +129,13 @@ public class Version implements Comparable<Version> {
 
     @Override
     public String toString() {
+        return toString(true);
+    }
+
+    public String toString(boolean labels) {
         StringBuilder builder = new StringBuilder();
 
-        if (this.prefix != null) {
+        if (this.prefix != null && labels) {
             builder.append(this.prefix);
             builder.append("-");
         }
@@ -145,7 +149,7 @@ public class Version implements Comparable<Version> {
             builder.append(this.patch);
         }
 
-        if (this.suffix != null) {
+        if (this.suffix != null && labels) {
             builder.append("-");
             builder.append(this.suffix);
         }
