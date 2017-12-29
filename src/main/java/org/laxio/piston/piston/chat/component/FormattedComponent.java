@@ -120,7 +120,6 @@ public class FormattedComponent implements MessageComponent {
         }
 
         if (color != null) {
-            System.out.println("Name for " + color.name() + ": " + color.getName());
             json.put("color", color.getName());
         }
 

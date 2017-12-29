@@ -1,6 +1,6 @@
 package org.laxio.piston.piston.chat;
 
-import java.util.logging.Logger;
+import org.laxio.piston.piston.logging.Logger;
 
 public enum StatusLevel {
 

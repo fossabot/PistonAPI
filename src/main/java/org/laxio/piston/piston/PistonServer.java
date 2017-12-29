@@ -5,12 +5,12 @@ import me.hfox.aphelion.CommandRegistration;
 import org.laxio.piston.piston.command.CommandSender;
 import org.laxio.piston.piston.command.ConsoleCommandSender;
 import org.laxio.piston.piston.event.ListenerManager;
+import org.laxio.piston.piston.logging.Logger;
 import org.laxio.piston.piston.protocol.Protocol;
 import org.laxio.piston.piston.session.MinecraftSessionService;
 
 import java.net.InetSocketAddress;
 import java.security.KeyPair;
-import java.util.logging.Logger;
 
 public interface PistonServer {
 

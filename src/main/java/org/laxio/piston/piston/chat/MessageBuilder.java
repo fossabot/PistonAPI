@@ -64,7 +64,6 @@ public class MessageBuilder {
             }
 
             int pos = 0;
-            System.out.println(message);
             for (ColorString entry : message) {
                 if (pos == 1) {
                     // first component is primary component

@@ -1,8 +1,7 @@
 package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.exception.protocol.stream.UnconfiguredStreamException;
-
-import java.util.logging.Logger;
+import org.laxio.piston.piston.logging.Logger;
 
 public class StreamManager {
 
