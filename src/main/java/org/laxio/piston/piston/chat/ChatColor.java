@@ -36,6 +36,9 @@ public enum ChatColor {
     private String console;
     private String string;
 
+    private boolean formatSet = false;
+    private boolean format;
+
     ChatColor(char code) {
         this(code, "");
         this.name = name.toLowerCase();
@@ -66,6 +69,21 @@ public enum ChatColor {
 
     public String toGame() {
         return string;
+    }
+
+    public boolean isFormat() {
+        if (!formatSet) {
+            this.formatSet = true;
+            for (ChatColor check : format()) {
+                if (this == check) {
+                    return this.format = true;
+                }
+            }
+
+            return this.format = false;
+        }
+
+        return format;
     }
 
     @Override
