@@ -1,6 +1,7 @@
 package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.data.Identifier;
+import org.laxio.piston.piston.entity.Metadata;
 import org.laxio.piston.piston.entity.Velocity;
 import org.laxio.piston.piston.entity.player.Player;
 import org.laxio.piston.piston.world.Location;
@@ -38,8 +39,6 @@ public interface PistonInput {
     int readInt() throws IOException;
 
     boolean readBoolean() throws IOException;
-
-    Location readPosition() throws IOException;
 
     /**
      * Read a UUID
@@ -112,5 +111,11 @@ public interface PistonInput {
     float readRotation() throws IOException;
 
     Velocity readVelocity() throws IOException;
+
+    Location readPosition() throws IOException;
+
+    default Metadata readMetadata() throws IOException {
+        return StreamManager.MANAGER.getHandler().readMetadata(this);
+    }
 
 }

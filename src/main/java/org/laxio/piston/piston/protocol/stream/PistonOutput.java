@@ -1,6 +1,7 @@
 package org.laxio.piston.piston.protocol.stream;
 
 import org.laxio.piston.piston.data.Identifier;
+import org.laxio.piston.piston.entity.Metadata;
 import org.laxio.piston.piston.entity.Velocity;
 import org.laxio.piston.piston.entity.player.Player;
 import org.laxio.piston.piston.world.Location;
@@ -98,7 +99,7 @@ public interface PistonOutput {
     PistonOutput writeIdentifier(Identifier data) throws IOException;
 
     default PistonOutput writePlayer(Player data) throws IOException {
-        StreamManager.MANAGER.getHandler().writePlayer(this, data);
+        StreamManager.MANAGER.getHandler().writeMetadata(this, data);
         return this;
     }
 
@@ -111,5 +112,10 @@ public interface PistonOutput {
     PistonOutput writeVelocity(Velocity data) throws IOException;
 
     PistonOutput writePosition(Location data) throws IOException;
+
+    default PistonOutput writeMetadata(Metadata metadata) throws IOException {
+        StreamManager.MANAGER.getHandler().writeMetadata(this, metadata);
+        return this;
+    }
 
 }

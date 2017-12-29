@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.protocol.stream;
 
+import org.laxio.piston.piston.entity.Metadata;
 import org.laxio.piston.piston.entity.player.Player;
 
 import java.io.IOException;
@@ -24,6 +25,23 @@ public interface StreamHandler {
      * @param output The output to write to
      * @param player The player to write
      */
-    void writePlayer(PistonOutput output, Player player) throws IOException;
+    void writeMetadata(PistonOutput output, Player player) throws IOException;
+
+    /**
+     * Reads the metadata from the input
+     *
+     * @param input The input to read from
+     *
+     * @return The Metadata from the input source
+     */
+    Metadata readMetadata(PistonInput input) throws IOException;
+
+    /**
+     * Writes the supplied metadata to the output
+     *
+     * @param output   The output to write to
+     * @param metadata The metadata to write
+     */
+    void writeMetadata(PistonOutput output, Metadata metadata) throws IOException;
 
 }
