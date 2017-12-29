@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.command;
 
+import org.laxio.piston.piston.chat.MessageComponent;
 import org.laxio.piston.piston.chat.StatusLevel;
 
 public interface CommandSender {
@@ -9,6 +10,8 @@ public interface CommandSender {
     void sendMessage(String message);
 
     void sendMessage(StatusLevel level, String message);
+
+    void sendMessage(MessageComponent message);
 
     boolean hasPermission(String string);
 
