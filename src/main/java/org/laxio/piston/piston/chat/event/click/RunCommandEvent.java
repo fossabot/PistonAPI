@@ -1,20 +1,20 @@
-package org.laxio.piston.piston.chat.event;
+package org.laxio.piston.piston.chat.event.click;
 
 /**
- * Represents the suggest_command action.
+ * Represents the run_command action.
  * Does not need to be a command, but if prefixed with '/' will be run as a command
  */
-public class SuggestCommandEvent implements ClickEvent {
+public class RunCommandEvent implements ClickEvent {
 
     private final String value;
 
-    public SuggestCommandEvent(String value) {
+    public RunCommandEvent(String value) {
         this.value = value;
     }
 
     @Override
     public String getAction() {
-        return "suggest_command";
+        return "run_command";
     }
 
     @Override

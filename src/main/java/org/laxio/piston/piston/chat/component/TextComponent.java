@@ -32,6 +32,15 @@ public class TextComponent extends FormattedComponent {
         this.text = text;
     }
 
+    /**
+     * Checks if this text component is purely text, no formatting/color, etc
+     *
+     * @return true if the component is pure, false otherwise
+     */
+    public boolean isPureText() {
+        return getExtra().length <= 0 && getColor() == null && getFormat().length <= 0;
+    }
+
     @Override
     public JSONObject toJSON() {
         JSONObject json = super.toJSON();

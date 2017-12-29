@@ -1,4 +1,4 @@
-package org.laxio.piston.piston.chat.event;
+package org.laxio.piston.piston.chat.event.click;
 
 /**
  * Represents the change_page action.

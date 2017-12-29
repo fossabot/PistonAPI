@@ -1,4 +1,4 @@
-package org.laxio.piston.piston.chat.event;
+package org.laxio.piston.piston.chat.event.click;
 
 import java.net.URL;
 

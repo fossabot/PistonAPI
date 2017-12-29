@@ -1,4 +1,6 @@
-package org.laxio.piston.piston.chat.event;
+package org.laxio.piston.piston.chat.event.click;
+
+import org.laxio.piston.piston.chat.event.ChatEvent;
 
 /**
  * Represents an event fired on click.
