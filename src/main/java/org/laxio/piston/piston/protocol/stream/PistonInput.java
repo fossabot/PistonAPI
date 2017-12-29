@@ -27,6 +27,8 @@ public interface PistonInput {
 
     int readUnsignedShort() throws IOException;
 
+    int readUnsignedByte() throws IOException;
+
     double readDouble() throws IOException;
 
     float readFloat() throws IOException;
