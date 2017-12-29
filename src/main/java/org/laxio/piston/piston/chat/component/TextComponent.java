@@ -10,6 +10,10 @@ public class TextComponent extends FormattedComponent {
 
     private String text;
 
+    public TextComponent() {
+        // empty
+    }
+
     public TextComponent(MessageComponent[] extra, ChatColor color, ChatColor[] format, ClickEvent clickEvent, HoverEvent hoverEvent, String text) {
         super(extra, color, format, clickEvent, hoverEvent);
         this.text = text;

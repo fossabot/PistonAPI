@@ -13,11 +13,19 @@ import org.laxio.piston.piston.exception.chat.ChatFormatException;
  */
 public class FormattedComponent implements MessageComponent {
 
-    private final MessageComponent[] extra;
+    private MessageComponent[] extra;
     private ChatColor color;
     private ChatColor[] format;
     private ClickEvent clickEvent;
     private HoverEvent hoverEvent;
+
+    public FormattedComponent() {
+        this.extra = null;
+        this.color = null;
+        this.format = null;
+        this.clickEvent = null;
+        this.hoverEvent = null;
+    }
 
     public FormattedComponent(MessageComponent[] extra, ChatColor color, ChatColor[] format, ClickEvent clickEvent, HoverEvent hoverEvent) {
         this.extra = extra;
@@ -32,11 +40,17 @@ public class FormattedComponent implements MessageComponent {
         return extra;
     }
 
+    @Override
+    public void setExtra(MessageComponent[] extra) {
+        this.extra = extra;
+    }
+
     /**
      * Gets the color of this component
      *
      * @return The color of this component
      */
+    @Override
     public ChatColor getColor() {
         return color;
     }
@@ -48,6 +62,7 @@ public class FormattedComponent implements MessageComponent {
      *
      * @throws ChatFormatException If the supplied color is a formatter
      */
+    @Override
     public void setColor(ChatColor color) {
         if (color.isFormat()) {
             throw new ChatFormatException(color.name() + " is a formatter not a color", this);
@@ -61,10 +76,12 @@ public class FormattedComponent implements MessageComponent {
      *
      * @return The formatting elements for this component
      */
+    @Override
     public ChatColor[] getFormat() {
         return format;
     }
 
+    @Override
     public void setFormat(ChatColor[] format) {
         for (ChatColor color : format) {
             if (!color.isFormat()) {
@@ -75,18 +92,22 @@ public class FormattedComponent implements MessageComponent {
         this.format = format;
     }
 
+    @Override
     public ClickEvent getClickEvent() {
         return clickEvent;
     }
 
+    @Override
     public void setClickEvent(ClickEvent clickEvent) {
         this.clickEvent = clickEvent;
     }
 
+    @Override
     public HoverEvent getHoverEvent() {
         return hoverEvent;
     }
 
+    @Override
     public void setHoverEvent(HoverEvent hoverEvent) {
         this.hoverEvent = hoverEvent;
     }
