@@ -6,6 +6,7 @@ import org.laxio.piston.piston.entity.type.LivingEntity;
 import org.laxio.piston.piston.protocol.Connection;
 import org.laxio.piston.piston.session.Profile;
 
+import java.net.InetAddress;
 import java.util.List;
 
 public interface Player extends Entity, CommandSender, LivingEntity {
@@ -19,5 +20,9 @@ public interface Player extends Entity, CommandSender, LivingEntity {
     List<Statistic> getStatistics();
 
     Statistic getStatistic(String name);
+
+    default InetAddress getAddress() {
+        return getConnection().getAddress().getAddress();
+    }
 
 }

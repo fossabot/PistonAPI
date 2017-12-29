@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.event.listener;
 
+import org.laxio.piston.piston.event.Cancellable;
 import org.laxio.piston.piston.event.Event;
 
 import java.lang.reflect.Method;
@@ -19,8 +20,11 @@ public class EventMethod extends ListenerMethod<Event> {
 
     @Override
     public void call(Event object) {
-        if (object.isCancelled() && !ignoreCancelled) {
-            return;
+        if (object instanceof Cancellable) {
+            Cancellable event = (Cancellable) object;
+            if (event.isCancelled() && !ignoreCancelled) {
+                return;
+            }
         }
 
         super.call(object);

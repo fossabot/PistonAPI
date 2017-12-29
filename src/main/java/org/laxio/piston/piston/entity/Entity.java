@@ -1,10 +1,13 @@
 package org.laxio.piston.piston.entity;
 
+import org.laxio.piston.piston.PistonServer;
 import org.laxio.piston.piston.world.Location;
 
 import java.util.UUID;
 
 public interface Entity {
+
+    PistonServer getServer();
 
     int getEntityId();
 
