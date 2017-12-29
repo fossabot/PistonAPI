@@ -45,23 +45,11 @@ public class FormattedComponent implements MessageComponent {
         this.extra = extra;
     }
 
-    /**
-     * Gets the color of this component
-     *
-     * @return The color of this component
-     */
     @Override
     public ChatColor getColor() {
         return color;
     }
 
-    /**
-     * Sets the color of this component
-     *
-     * @param color The color to set
-     *
-     * @throws ChatFormatException If the supplied color is a formatter
-     */
     @Override
     public void setColor(ChatColor color) {
         if (color.isFormat()) {
@@ -71,11 +59,6 @@ public class FormattedComponent implements MessageComponent {
         this.color = color;
     }
 
-    /**
-     * Gets the formatting elements set on this component
-     *
-     * @return The formatting elements for this component
-     */
     @Override
     public ChatColor[] getFormat() {
         return format;
@@ -115,14 +98,13 @@ public class FormattedComponent implements MessageComponent {
     @Override
     public JSONObject toJSON() {
         JSONObject json = new JSONObject();
-        if (color != null) {
-            json.put("color", color.getName());
-        }
-
-        if (format != null) {
-            for (ChatColor color : format) {
-                json.put(color.getName(), true);
+        if (extra != null && extra.length > 0) {
+            JSONArray array = new JSONArray();
+            for (MessageComponent component : extra) {
+                array.put(component.toJSON());
             }
+
+            json.put("extra", array);
         }
 
         if (clickEvent != null) {
@@ -133,13 +115,13 @@ public class FormattedComponent implements MessageComponent {
             json.put("hover_event", hoverEvent.toJSON());
         }
 
-        if (extra != null && extra.length > 0) {
-            JSONArray array = new JSONArray();
-            for (MessageComponent component : extra) {
-                array.put(component.toJSON());
-            }
+        for (ChatColor color : ChatColor.format()) {
+            json.put(color.getName(), hasFormat(color));
+        }
 
-            json.put("extra", array);
+        if (color != null) {
+            System.out.println("Name for " + color.name() + ": " + color.getName());
+            json.put("color", color.getName());
         }
 
         return json;

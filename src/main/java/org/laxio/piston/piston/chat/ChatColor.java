@@ -41,7 +41,7 @@ public enum ChatColor {
 
     ChatColor(char code) {
         this(code, "");
-        this.name = name.toLowerCase();
+        this.name = name().toLowerCase();
     }
 
     ChatColor(char code, String name) {

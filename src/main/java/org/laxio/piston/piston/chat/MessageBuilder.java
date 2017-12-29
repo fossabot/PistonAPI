@@ -29,11 +29,17 @@ public class MessageBuilder {
 
     public MessageComponent build() {
         if (this.message != null) {
+            TextComponent component = new TextComponent();
             String splitter = ChatColor.COLOR_CHAR + "";
+            if (!message.contains(splitter)) {
+                component.setText(message);
+                return component;
+            }
 
             List<ColorString> message = new ArrayList<>();
             TextComponent primary = new TextComponent();
-            TextComponent component = primary;
+            component = primary;
+
             if (this.message.contains(splitter)) {
                 String[] split = this.message.split(splitter);
                 // Splits the string by color codes
@@ -57,18 +63,58 @@ public class MessageBuilder {
                 return component;
             }
 
-
-            List<TextComponent> extra = new ArrayList<>();
-
-            int pos = 1;
+            int pos = 0;
+            System.out.println(message);
             for (ColorString entry : message) {
+                if (pos == 1) {
+                    // first component is primary component
+                    primary = component;
+                }
+
+                pos++;
                 ChatColor color = entry.getColor();
                 String text = entry.getString();
 
                 if (color.isFormat()) {
+                    if (component.hasFormat(color)) {
+                        if (text != null) {
+                            // format already included but has text
+                            component.setText(component.getText() + text);
+                        }
 
+                        continue;
+                    }
+
+                    if (text != null && text.length() > 0) {
+                        if (component.getText() != null && component.getText().length() > 0) {
+                            // add new component with existing formatting
+                            (component = component.add(new TextComponent())).setText(text);
+                        } else {
+                            // use parent component because it was empty
+                            component.setText(text);
+                        }
+                    }
+
+                    // add the format supplied by this tag to the component
+                    component.addFormat(color);
+                } else {
+                    // new color, new component
+                    component = component.addExtra(new TextComponent());
+                    if (text == null) {
+                        text = "";
+                    }
+
+                    component.setText(text);
+                    component.setColor(color);
                 }
             }
+
+            if (pos == 1) {
+                // first component is primary component
+                primary = component;
+            }
+
+            return primary;
         }
 
         return null;
@@ -101,7 +147,7 @@ public class MessageBuilder {
 
         @Override
         public String toString() {
-            return color.name() + ": " + string;
+            return "{" + color.name() + ":'" + string + "'}";
         }
 
     }
