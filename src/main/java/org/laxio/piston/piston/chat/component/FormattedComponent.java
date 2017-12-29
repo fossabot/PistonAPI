@@ -1,8 +1,11 @@
 package org.laxio.piston.piston.chat.component;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.laxio.piston.piston.chat.ChatColor;
 import org.laxio.piston.piston.chat.MessageComponent;
+import org.laxio.piston.piston.chat.event.click.ClickEvent;
+import org.laxio.piston.piston.chat.event.hover.HoverEvent;
 import org.laxio.piston.piston.exception.chat.ChatFormatException;
 
 /**
@@ -13,11 +16,20 @@ public class FormattedComponent implements MessageComponent {
     private final MessageComponent[] extra;
     private ChatColor color;
     private ChatColor[] format;
+    private ClickEvent clickEvent;
+    private HoverEvent hoverEvent;
 
-    public FormattedComponent(ChatColor color, ChatColor[] format, MessageComponent[] extra) {
+    public FormattedComponent(MessageComponent[] extra, ChatColor color, ChatColor[] format, ClickEvent clickEvent, HoverEvent hoverEvent) {
+        this.extra = extra;
         this.color = color;
         this.format = format;
-        this.extra = extra;
+        this.clickEvent = clickEvent;
+        this.hoverEvent = hoverEvent;
+    }
+
+    @Override
+    public MessageComponent[] getExtra() {
+        return extra;
     }
 
     /**
@@ -63,14 +75,53 @@ public class FormattedComponent implements MessageComponent {
         this.format = format;
     }
 
-    @Override
-    public MessageComponent[] getExtra() {
-        return extra;
+    public ClickEvent getClickEvent() {
+        return clickEvent;
+    }
+
+    public void setClickEvent(ClickEvent clickEvent) {
+        this.clickEvent = clickEvent;
+    }
+
+    public HoverEvent getHoverEvent() {
+        return hoverEvent;
+    }
+
+    public void setHoverEvent(HoverEvent hoverEvent) {
+        this.hoverEvent = hoverEvent;
     }
 
     @Override
     public JSONObject toJSON() {
-        return null;
+        JSONObject json = new JSONObject();
+        if (color != null) {
+            json.put("color", color.getName());
+        }
+
+        if (format != null) {
+            for (ChatColor color : format) {
+                json.put(color.getName(), true);
+            }
+        }
+
+        if (clickEvent != null) {
+            json.put("click_event", clickEvent.toJSON());
+        }
+
+        if (hoverEvent != null) {
+            json.put("hover_event", hoverEvent.toJSON());
+        }
+
+        if (extra != null && extra.length > 0) {
+            JSONArray array = new JSONArray();
+            for (MessageComponent component : extra) {
+                array.put(component.toJSON());
+            }
+
+            json.put("extra", array);
+        }
+
+        return json;
     }
 
     @Override

@@ -3,13 +3,15 @@ package org.laxio.piston.piston.chat.component;
 import org.json.JSONObject;
 import org.laxio.piston.piston.chat.ChatColor;
 import org.laxio.piston.piston.chat.MessageComponent;
+import org.laxio.piston.piston.chat.event.click.ClickEvent;
+import org.laxio.piston.piston.chat.event.hover.HoverEvent;
 
 public class TextComponent extends FormattedComponent {
 
     private String text;
 
-    public TextComponent(ChatColor color, ChatColor[] format, MessageComponent[] extra, String text) {
-        super(color, format, extra);
+    public TextComponent(MessageComponent[] extra, ChatColor color, ChatColor[] format, ClickEvent clickEvent, HoverEvent hoverEvent, String text) {
+        super(extra, color, format, clickEvent, hoverEvent);
         this.text = text;
     }
 
