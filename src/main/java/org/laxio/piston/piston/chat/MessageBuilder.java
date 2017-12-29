@@ -132,16 +132,16 @@ public class MessageBuilder {
         private ChatColor color;
         private String string;
 
-        public ColorString(ChatColor color, String string) {
+        private ColorString(ChatColor color, String string) {
             this.color = color;
             this.string = string;
         }
 
-        public ChatColor getColor() {
+        private ChatColor getColor() {
             return color;
         }
 
-        public String getString() {
+        private String getString() {
             return string;
         }
 
