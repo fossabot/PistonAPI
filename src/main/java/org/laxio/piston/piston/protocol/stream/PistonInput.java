@@ -37,6 +37,10 @@ public interface PistonInput {
 
     int readInt() throws IOException;
 
+    boolean readBoolean() throws IOException;
+
+    Location readPosition() throws IOException;
+
     /**
      * Read a UUID
      *

@@ -34,6 +34,8 @@ public interface PistonOutput {
 
     void writeInt(int data) throws IOException;
 
+    void writeBoolean(boolean data) throws IOException;
+
     /**
      * Writes the supplied UUID
      *
@@ -107,5 +109,7 @@ public interface PistonOutput {
     PistonOutput writeRotation(float data) throws IOException;
 
     PistonOutput writeVelocity(Velocity data) throws IOException;
+
+    PistonOutput writePosition(Location data) throws IOException;
 
 }

@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.chat;
 
+import org.json.JSONObject;
 import org.laxio.piston.piston.chat.component.TextComponent;
 
 import java.util.ArrayList;
@@ -8,13 +9,21 @@ import java.util.List;
 public class MessageBuilder {
 
     private String message;
+    private JSONObject json;
 
     private MessageBuilder() {
         // empty but private
     }
 
     public MessageBuilder message(String message) {
+        this.json = null;
         this.message = message;
+        return this;
+    }
+
+    public MessageBuilder json(JSONObject json) {
+        this.message = null;
+        this.json = json;
         return this;
     }
 

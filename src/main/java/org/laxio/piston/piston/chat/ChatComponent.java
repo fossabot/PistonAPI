@@ -6,6 +6,4 @@ public interface ChatComponent {
 
     JSONObject toJSON();
 
-    String toString();
-
 }
