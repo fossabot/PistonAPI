@@ -1,5 +1,8 @@
 package org.laxio.piston.piston.util;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class Environment {
 
     private static final Object lock = new Object();
@@ -13,6 +16,10 @@ public class Environment {
 
     public static void setDebugMode(boolean debugMode) {
         synchronized (lock) {
+            if (debugMode) {
+                Logger.getGlobal().setLevel(Level.ALL);
+            }
+
             Environment.debugMode = debugMode;
         }
     }
