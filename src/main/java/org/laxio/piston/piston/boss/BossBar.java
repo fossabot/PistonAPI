@@ -1,14 +1,16 @@
 package org.laxio.piston.piston.boss;
 
+import org.laxio.piston.piston.chat.MessageComponent;
+
 import java.util.UUID;
 
 public interface BossBar {
 
     UUID getUniqueId();
 
-    String getTitle();
+    MessageComponent getTitle();
 
-    void setTitle(String string);
+    void setTitle(MessageComponent title);
 
     float getHealth();
 

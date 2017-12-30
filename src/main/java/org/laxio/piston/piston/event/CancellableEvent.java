@@ -1,6 +1,6 @@
 package org.laxio.piston.piston.event;
 
-public class CancellableEvent implements Event, Cancellable {
+public abstract class CancellableEvent implements Event, Cancellable {
 
     private boolean cancelled = false;
 
