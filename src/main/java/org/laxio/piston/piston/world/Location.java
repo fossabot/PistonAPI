@@ -2,12 +2,12 @@ package org.laxio.piston.piston.world;
 
 public class Location {
 
-    private double x;
-    private double y;
-    private double z;
+    protected double x;
+    protected double y;
+    protected double z;
 
-    private float yaw;
-    private float pitch;
+    protected float yaw;
+    protected float pitch;
 
     public Location(int x, int y, int z) {
         this.x = asBlockPoint(x);
