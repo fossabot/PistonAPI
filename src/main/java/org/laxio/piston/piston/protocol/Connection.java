@@ -14,4 +14,6 @@ public interface Connection {
 
     InetSocketAddress getAddress();
 
+    int getProtocolVersion();
+
 }
