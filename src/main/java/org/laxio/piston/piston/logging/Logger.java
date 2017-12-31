@@ -1,5 +1,7 @@
 package org.laxio.piston.piston.logging;
 
+import org.laxio.piston.piston.chat.StatusLevel;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -66,6 +68,10 @@ public class Logger {
 
     public void config(String message, Object... args) {
         log(Level.CONFIG, message, args);
+    }
+
+    public void debug(String message, Object... args) {
+        log(StatusLevel.DEBUG_LEVEL, message, args);
     }
 
     public static Logger getLogger(String name) {
