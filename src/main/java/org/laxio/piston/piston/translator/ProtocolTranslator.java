@@ -1,14 +1,17 @@
 package org.laxio.piston.piston.translator;
 
 import org.laxio.piston.piston.protocol.Packet;
-import org.laxio.piston.piston.versioning.Version;
 
 public interface ProtocolTranslator {
 
-    Version getTranslatedVersion();
+    int getTranslatedVersion();
 
-    Version getNativeVersion();
+    int getNativeVersion();
 
     boolean matches(Packet packet);
+
+    Packet translateToNative(Packet packet);
+
+    Packet translateFromNative(Packet packet);
 
 }

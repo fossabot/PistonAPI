@@ -12,8 +12,6 @@ public interface Protocol {
 
     int getId(Packet packet) throws PacketNotFoundException;
 
-    String getVersion();
-
-    String getMinecraftVersion();
+    int getVersion();
 
 }

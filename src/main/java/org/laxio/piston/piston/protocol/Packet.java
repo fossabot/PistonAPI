@@ -12,6 +12,13 @@ import java.io.IOException;
 public interface Packet {
 
     /**
+     * Returns the version of this packet
+     *
+     * @return The version of this packet
+     */
+    int getVersion();
+
+    /**
      * Returns the connection that this Packet belongs too
      *
      * @return The connection that this packet belongs too
