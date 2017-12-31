@@ -2,10 +2,15 @@ package org.laxio.piston.piston.world;
 
 public class BlockLocation extends Location {
 
-    private World world;
+    private final World world;
 
     public BlockLocation(World world, int x, int y, int z) {
         super(x, y, z);
+        this.world = world;
+    }
+
+    public World getWorld() {
+        return world;
     }
 
     @Override

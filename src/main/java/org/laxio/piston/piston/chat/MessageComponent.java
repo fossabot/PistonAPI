@@ -82,7 +82,7 @@ public interface MessageComponent extends ChatComponent {
         }
 
         for (ChatColor color : getFormat()) {
-            if (color == format) {
+            if (color.equals(format)) {
                 return true;
             }
         }

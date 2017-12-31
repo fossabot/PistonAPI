@@ -107,7 +107,7 @@ public enum ChatColor {
 
     public static ChatColor getByChar(String code) {
         if (code == null) {
-            throw new NullPointerException("Code cannot be null");
+            throw new IllegalArgumentException("Code cannot be null");
         }
 
         if (code.length() <= 0) {
@@ -138,11 +138,12 @@ public enum ChatColor {
     }
 
     public static String getConsoleString(String input) {
+        String output = input;
         for (ChatColor color : values()) {
-            input = input.replace(color.toString(), color.toConsole());
+            output = output.replace(color.toString(), color.toConsole());
         }
 
-        return input;
+        return output;
     }
 
     public static ChatColor[] format() {
