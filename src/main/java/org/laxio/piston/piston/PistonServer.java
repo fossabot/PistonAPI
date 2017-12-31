@@ -120,6 +120,14 @@ public interface PistonServer extends ListenerOwner {
     ConsoleCommandSender getConsole();
 
     /**
+     * Runs the command from the specified command sender
+     *
+     * @param sender  The sender that is going to run the command
+     * @param command The full string version of the command to run
+     */
+    void runCommand(CommandSender sender, String command);
+
+    /**
      * Gets the Aphelion instance which manages the commands for this server
      * @return The Aphelion instance for this server
      */

@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.command;
 
+import org.laxio.piston.piston.PistonServer;
 import org.laxio.piston.piston.chat.ChatPosition;
 import org.laxio.piston.piston.chat.MessageComponent;
 import org.laxio.piston.piston.chat.StatusLevel;
@@ -7,6 +8,8 @@ import org.laxio.piston.piston.chat.StatusLevel;
 public interface CommandSender {
 
     String getName();
+
+    PistonServer getServer();
 
     default void sendMessage(String message) {
         sendMessage(ChatPosition.CHAT, message);
