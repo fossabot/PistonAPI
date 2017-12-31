@@ -37,6 +37,8 @@ public class MessageBuilder {
     public MessageComponent build() {
         if (this.message != null) {
             return buildString();
+        } else if (this.json != null) {
+            return buildJSON();
         }
 
         return null;
@@ -69,7 +71,7 @@ public class MessageBuilder {
             String text = entry.getString();
 
             if (color.isFormat()) {
-                format(color, text, component);
+                component = format(color, text, component);
             } else {
                 // new color, new component
                 component = component.addExtra(new TextComponent());
@@ -129,16 +131,17 @@ public class MessageBuilder {
      *
      * @param color     The color to check
      * @param text      The text preceding the color
-     * @param component The component to work on
+     * @param origin The component to work on
      */
-    private void format(ChatColor color, String text, TextComponent component) {
+    private TextComponent format(ChatColor color, String text, TextComponent origin) {
+        TextComponent component = origin;
         if (component.hasFormat(color)) {
             if (text != null) {
                 // format already included but has text
                 component.setText(component.getText() + text);
             }
 
-            return;
+            return component;
         }
 
         if (text != null && text.length() > 0) {
@@ -153,6 +156,12 @@ public class MessageBuilder {
 
         // add the format supplied by this tag to the component
         component.addFormat(color);
+        return component;
+    }
+
+    private MessageComponent buildJSON() {
+        // TODO: write JSON -> MessageComponent conversion
+        return null;
     }
 
     /**
