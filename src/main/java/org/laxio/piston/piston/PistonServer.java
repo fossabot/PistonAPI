@@ -5,6 +5,7 @@ import me.hfox.aphelion.CommandRegistration;
 import org.laxio.piston.piston.command.CommandSender;
 import org.laxio.piston.piston.command.ConsoleCommandSender;
 import org.laxio.piston.piston.event.ListenerManager;
+import org.laxio.piston.piston.event.listener.ListenerOwner;
 import org.laxio.piston.piston.logging.Logger;
 import org.laxio.piston.piston.protocol.Protocol;
 import org.laxio.piston.piston.session.MinecraftSessionService;
@@ -15,7 +16,14 @@ import java.net.InetSocketAddress;
 import java.security.KeyPair;
 import java.util.List;
 
-public interface PistonServer {
+public interface PistonServer extends ListenerOwner {
+
+    /**
+     * Gets the name of this server
+     *
+     * @return The name of this server
+     */
+    String getName();
 
     /**
      * Gets the version of this PistonServer implementation
@@ -109,5 +117,24 @@ public interface PistonServer {
     Aphelion<CommandSender> getAphelion();
 
     CommandRegistration<CommandSender> getCommandRegistration();
+
+    /**
+     * Starts the server
+     *
+     * @return Returns false if there was an issue starting the server, otherwise true
+     */
+    boolean start();
+
+    /**
+     * Returns if the server is running
+     *
+     * @return True if the server is running, false otherwise
+     */
+    boolean isRunning();
+
+    /**
+     * Stops the server
+     */
+    void stop();
 
 }

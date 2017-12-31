@@ -2,6 +2,7 @@ package org.laxio.piston.piston.event.listener;
 
 import org.laxio.piston.piston.exception.event.ListenerConfigurationException;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public class ListenerMethod<T> {
@@ -30,8 +31,10 @@ public class ListenerMethod<T> {
     public void call(T object) {
         try {
             method.invoke(listener, object);
-        } catch (Exception ex) {
+        } catch (IllegalAccessException | InvocationTargetException ex) {
             throw new ListenerConfigurationException("Listener method not configured correctly", ex, listener);
+        } catch (Exception ex) {
+            listener.getOwner().handle(ex);
         }
     }
 

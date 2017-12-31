@@ -5,6 +5,6 @@ package org.laxio.piston.piston.event.listener;
  */
 public interface Listener {
 
-    // no methods required
+    ListenerOwner getOwner();
 
 }
