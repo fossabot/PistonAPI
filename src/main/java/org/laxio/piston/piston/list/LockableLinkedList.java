@@ -63,10 +63,12 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
      *
      * @param locked The lock state to set the list as
      */
-    public void setLocked(boolean locked) {
+    public LockableLinkedList<E> setLocked(boolean locked) {
         synchronized (lock) {
             this.locked = locked;
         }
+
+        return this;
     }
 
     /**

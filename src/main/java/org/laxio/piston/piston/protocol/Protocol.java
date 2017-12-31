@@ -1,5 +1,6 @@
 package org.laxio.piston.piston.protocol;
 
+import org.laxio.piston.piston.PistonServer;
 import org.laxio.piston.piston.exception.protocol.packet.PacketNotFoundException;
 import org.laxio.piston.piston.exception.protocol.packet.UnsupportedPacketException;
 
@@ -7,6 +8,10 @@ import org.laxio.piston.piston.exception.protocol.packet.UnsupportedPacketExcept
  * Protocol interface implemented by StickyProtocol
  */
 public interface Protocol {
+
+    PistonServer getServer();
+
+    void setServer(PistonServer server);
 
     Packet getPacket(ProtocolState state, PacketDirection direction, int id) throws UnsupportedPacketException, PacketNotFoundException;
 

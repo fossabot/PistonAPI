@@ -8,7 +8,7 @@ public interface ProtocolTranslator {
 
     PistonServer getServer();
 
-    Version getNativeMinecraftVersion();
+    Version getTranslatedMinecraftVersion();
 
     int getNativeVersion();
 

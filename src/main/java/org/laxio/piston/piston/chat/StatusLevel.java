@@ -7,31 +7,31 @@ import java.util.logging.Level;
 
 public enum StatusLevel {
 
-    DEBUG(ChatColor.LIGHT_PURPLE) {
+    DEBUG(null, ChatColor.LIGHT_PURPLE) {
         @Override
         void log(Logger logger, String message) {
             logger.log(DEBUG_LEVEL, message);
         }
     },
-    CONFIG(ChatColor.AQUA) {
+    CONFIG(Level.CONFIG, ChatColor.AQUA) {
         @Override
         void log(Logger logger, String message) {
             logger.config(message);
         }
     },
-    WARNING(ChatColor.RED) {
+    WARNING(Level.WARNING, ChatColor.RED) {
         @Override
         void log(Logger logger, String message) {
             logger.warning(message);
         }
     },
-    SEVERE(ChatColor.YELLOW) {
+    SEVERE(Level.SEVERE, ChatColor.YELLOW) {
         @Override
         void log(Logger logger, String message) {
             logger.severe(message);
         }
     },
-    NORMAL(ChatColor.WHITE) {
+    NORMAL(Level.INFO, ChatColor.WHITE) {
         @Override
         void log(Logger logger, String message) {
             logger.info(message);
@@ -40,10 +40,20 @@ public enum StatusLevel {
 
     public static final Level DEBUG_LEVEL = new DebugLevel();
 
+    private Level level;
     private final ChatColor color;
 
-    StatusLevel(ChatColor color) {
+    StatusLevel(Level level, ChatColor color) {
+        this.level = level;
         this.color = color;
+    }
+
+    public Level getLevel() {
+        if (this.level == null) {
+            this.level = DEBUG_LEVEL;
+        }
+
+        return level;
     }
 
     public ChatColor getColor() {
@@ -55,5 +65,15 @@ public enum StatusLevel {
     }
 
     abstract void log(Logger logger, String message);
+
+    public static StatusLevel getLevel(Level level) {
+        for (StatusLevel status : values()) {
+            if (status.getLevel().equals(level)) {
+                return status;
+            }
+        }
+
+        return NORMAL;
+    }
 
 }
