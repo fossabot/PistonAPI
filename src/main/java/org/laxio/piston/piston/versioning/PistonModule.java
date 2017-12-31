@@ -101,7 +101,7 @@ public class PistonModule {
      * @throws IOException
      */
     public static PistonModule build(String pkg, String tag) throws IOException {
-        JSONObject json = getJSON("/" + debug() + pkg);
+        JSONObject json = getJSON("/" + ide() + pkg);
         return build(json, tag);
     }
 
@@ -115,7 +115,7 @@ public class PistonModule {
      * @throws IOException
      */
     private static JSONObject getJSON(Class<?> cls) throws IOException {
-        return getJSON("/" + debug() + cls.getPackage().getName() + ".json");
+        return getJSON("/" + ide() + cls.getPackage().getName() + ".json");
     }
 
     /**
@@ -164,12 +164,12 @@ public class PistonModule {
     }
 
     /**
-     * Returns the test prefix if debug mode is enabled
+     * Returns the test prefix if ide mode is enabled
      *
-     * @return "test-" if debug mode is enabled, otherwise ""
+     * @return "test-" if ide mode is enabled, otherwise ""
      */
-    private static String debug() {
-        return Environment.isDebugMode() ? "test-" : "";
+    private static String ide() {
+        return Environment.isIDE() ? "test-" : "";
     }
 
 }

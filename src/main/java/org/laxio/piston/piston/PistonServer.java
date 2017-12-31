@@ -112,10 +112,23 @@ public interface PistonServer extends ListenerOwner {
      */
     Logger getLogger();
 
+    /**
+     * Gets the command sender that represents the console for this server
+     *
+     * @return The console command sender for this server
+     */
     ConsoleCommandSender getConsole();
 
+    /**
+     * Gets the Aphelion instance which manages the commands for this server
+     * @return The Aphelion instance for this server
+     */
     Aphelion<CommandSender> getAphelion();
 
+    /**
+     * Gets the command registration for this server
+     * @return The command registration for this server
+     */
     CommandRegistration<CommandSender> getCommandRegistration();
 
     /**

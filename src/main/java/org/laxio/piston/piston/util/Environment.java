@@ -8,6 +8,7 @@ public class Environment {
 
     private static final Object lock = new Object();
     private static boolean debugMode = false;
+    private static boolean ideMode = false;
 
     public static boolean isDebugMode() {
         synchronized (lock) {
@@ -22,6 +23,18 @@ public class Environment {
             }
 
             Environment.debugMode = debugMode;
+        }
+    }
+
+    public static boolean isIDE() {
+        synchronized (lock) {
+            return ideMode;
+        }
+    }
+
+    public static void setIDE(boolean ide) {
+        synchronized (lock) {
+            Environment.ideMode = ide;
         }
     }
 

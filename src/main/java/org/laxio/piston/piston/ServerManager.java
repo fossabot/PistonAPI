@@ -22,6 +22,10 @@ public class ServerManager {
     }
 
     public void addServer(PistonServer server) {
+        if (this.servers.contains(server)) {
+            return;
+        }
+
         this.servers.add(server);
     }
 
