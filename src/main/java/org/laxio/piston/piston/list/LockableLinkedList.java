@@ -19,7 +19,9 @@ package org.laxio.piston.piston.list;
 import org.laxio.piston.piston.exception.list.ListLockedException;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.function.Predicate;
 
 /**
@@ -79,12 +81,10 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
      *
      * @param locked The lock state to set the list as
      */
-    public LockableLinkedList<E> setLocked(boolean locked) {
+    public void setLocked(boolean locked) {
         synchronized (lock) {
             this.locked = locked;
         }
-
-        return this;
     }
 
     /**
@@ -280,6 +280,38 @@ public class LockableLinkedList<E extends Object> extends LinkedList<E> {
             throw new ListLockedException();
 
         return super.remove();
+    }
+
+    /**
+     * Creates a locked list with the supplied contents
+     *
+     * @param contents The contents to fill with
+     * @param <T>      The generic type
+     *
+     * @return A new list with the supplied contents
+     */
+    public static <T> LockableLinkedList<T> createLocked(T... contents) {
+        LockableLinkedList<T> list = new LockableLinkedList<>();
+        Collections.addAll(list, contents);
+
+        list.setLocked(true);
+        return list;
+    }
+
+    /**
+     * Creates a locked list with the supplied contents
+     *
+     * @param contents The contents to fill with
+     * @param <T>      The generic type
+     *
+     * @return A new list with the supplied contents
+     */
+    public static <T> LockableLinkedList<T> createLocked(List<T> contents) {
+        LockableLinkedList<T> list = new LockableLinkedList<>();
+        list.addAll(contents);
+
+        list.setLocked(true);
+        return list;
     }
 
 }
