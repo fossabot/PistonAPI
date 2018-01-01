@@ -4,7 +4,7 @@ package org.laxio.piston.piston.chat;
          * #%L
          * Piston API
          * %%
-         * Copyright (C) 2017 Laxio
+         * Copyright (C) 2017 - 2018 Laxio
          * %%
          * This file is part of Piston, licensed under the MIT License (MIT).
          *
@@ -55,9 +55,8 @@ public enum StatusLevel {
     };
 
     public static final Level DEBUG_LEVEL = new DebugLevel();
-
-    private Level level;
     private final ChatColor color;
+    private Level level;
 
     StatusLevel(Level level, ChatColor color) {
         this.level = level;

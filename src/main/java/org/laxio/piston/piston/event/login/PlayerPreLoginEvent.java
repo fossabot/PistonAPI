@@ -4,7 +4,7 @@ package org.laxio.piston.piston.event.login;
          * #%L
          * Piston API
          * %%
-         * Copyright (C) 2017 Laxio
+         * Copyright (C) 2017 - 2018 Laxio
          * %%
          * This file is part of Piston, licensed under the MIT License (MIT).
          *
@@ -48,13 +48,13 @@ public class PlayerPreLoginEvent implements Event {
         return kickMessage;
     }
 
+    public void setKickMessage(MessageComponent kickMessage) {
+        this.kickMessage = kickMessage;
+    }
+
     @Deprecated
     public void setKickMessage(String message) {
         this.kickMessage = MessageBuilder.builder().message(message).build();
-    }
-
-    public void setKickMessage(MessageComponent kickMessage) {
-        this.kickMessage = kickMessage;
     }
 
     public enum LoginResult {

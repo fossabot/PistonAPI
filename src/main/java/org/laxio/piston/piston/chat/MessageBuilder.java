@@ -4,7 +4,7 @@ package org.laxio.piston.piston.chat;
          * #%L
          * Piston API
          * %%
-         * Copyright (C) 2017 Laxio
+         * Copyright (C) 2017 - 2018 Laxio
          * %%
          * This file is part of Piston, licensed under the MIT License (MIT).
          *
@@ -145,8 +145,8 @@ public class MessageBuilder {
     /**
      * Works on the supplied component based on the color/text provided
      *
-     * @param color     The color to check
-     * @param text      The text preceding the color
+     * @param color  The color to check
+     * @param text   The text preceding the color
      * @param origin The component to work on
      */
     private TextComponent format(ChatColor color, String text, TextComponent origin) {
@@ -182,6 +182,7 @@ public class MessageBuilder {
 
     /**
      * Creates a new Builder
+     *
      * @return The new builder
      */
     public static MessageBuilder builder() {

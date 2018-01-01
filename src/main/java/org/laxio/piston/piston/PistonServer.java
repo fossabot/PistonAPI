@@ -4,7 +4,7 @@ package org.laxio.piston.piston;
          * #%L
          * Piston API
          * %%
-         * Copyright (C) 2017 Laxio
+         * Copyright (C) 2017 - 2018 Laxio
          * %%
          * This file is part of Piston, licensed under the MIT License (MIT).
          *
@@ -73,12 +73,14 @@ public interface PistonServer extends ListenerOwner {
 
     /**
      * Adds the supplied Protocol to the list of available protocols
+     *
      * @param protocol The protocol to add
      */
     void addProtocol(Protocol protocol);
 
     /**
      * Gets a list of all the protocol translators
+     *
      * @return A list of translators
      */
     List<ProtocolTranslator> getTranslators();
@@ -94,36 +96,42 @@ public interface PistonServer extends ListenerOwner {
 
     /**
      * Gets the ListenerManager for this server
+     *
      * @return The ListenerManager for this server
      */
     ListenerManager getManager();
 
     /**
      * Gets the KeyPair for this server
+     *
      * @return The KeyPair for this server
      */
     KeyPair getKeyPair();
 
     /**
      * Returns if this server is in Online-Mode or not
+     *
      * @return true if the server is online-mode, false otherwise
      */
     boolean isOnlineMode();
 
     /**
      * Gets the session service being used by this server
+     *
      * @return The session service used by this server
      */
     MinecraftSessionService getSessionService();
 
     /**
      * Gets the address that this server is bound to
+     *
      * @return The address that this server is bound to
      */
     InetSocketAddress getBindAddress();
 
     /**
      * Gets the Logger that this server is writing to
+     *
      * @return The logger that this server is writing to
      */
     Logger getLogger();
@@ -145,12 +153,14 @@ public interface PistonServer extends ListenerOwner {
 
     /**
      * Gets the Aphelion instance which manages the commands for this server
+     *
      * @return The Aphelion instance for this server
      */
     Aphelion<CommandSender> getAphelion();
 
     /**
      * Gets the command registration for this server
+     *
      * @return The command registration for this server
      */
     CommandRegistration<CommandSender> getCommandRegistration();
